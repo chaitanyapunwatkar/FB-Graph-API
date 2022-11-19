@@ -7,14 +7,12 @@ import pandas as pd
 def extract_data():
     # Define Parameters Dictionary
     params = dict()
-    # Access Token generated from graph api tools
-    params['access_token'] = 'EAAGZC9aZBFCyYBAIy3jmgZCNRBWeMSsTr1u0hEawmbmTACThONKzqwGJQfLZA7pJImaexZCpZCwQj7PEsNc6vMS4PwsTOGihdDSwYOGWOcwa8ziKjZBZCKdsIwxcdGKjIn9Ya9OOwv5JZCHfofOSk7ZCA0tJ21vFzci0lcCmTJRmxdmZBvZA4FiEy7mI'       
+    params['access_token'] = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'  # Access Token generated from graph api tools    
     params['graph_domain'] = 'https://graph.facebook.com' 
-    params['graph_version'] = 'v15.0'
-    params['endpoint_base'] = params['graph_domain'] + '/' + params['graph_version'] + '/'
-    params['instagram_account_id'] = '17841456289775098'    # instagram business account id
-    params['ig_username'] = '_itachiu__'
-
+    params['graph_version'] = 'v15.0' # API version 
+    params['endpoint_base'] = params['graph_domain'] + '/' + params['graph_version'] + '/' #url
+    params['instagram_account_id'] = 'xxxxxxxxxx'    # instagram business account id
+    params['ig_username'] = '_itachiu__' #instagram username
 
     # Define Endpoint Parameters
     endpointParams = dict()
