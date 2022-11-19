@@ -7,21 +7,14 @@ import pandas as pd
 from FBData_API import *
 
 app = Flask(__name__)
- 
-@app.route("/", methods=("POST", "GET"))
-def home():
-    #return "Hello! This is the main page <h1>Welcome to Flask<h1>"
-    df = extract_data()
-    return render_template('index.html',  column_names=df.columns.values, row_data=list(df.values.tolist()),
-                           link_column="Media_URL", zip=zip)
-    
-@app.route("/<name>")
-def user(name):
-    return f"Hello {name}!"
 
-@app.route("/admin")
-def admin():
-    return redirect(url_for("user", name="Admin!"))
+ # Home page content
+@app.route("/", methods=("POST", "GET"))
+def home(): 
+    df = extract_data() # fetchs data from facebook graph API.
+    return render_template('index.html',  column_names=df.columns.values, row_data=list(df.values.tolist()),
+                           link_column="Media_URL", zip=zip) # Displays in html format in Web
+    
 
 if __name__ == "__main__":
     app.run()
