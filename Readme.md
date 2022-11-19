@@ -3,7 +3,7 @@
 
 ## Description
 
-The Project is about fetching Instagram posts insights of creators/businesses using Facebook Graph API. The code is written using python language. Flask framework is used for publishing data in web for visualization purpose. For frontend, basic html and CSS is used.
+The Project is about fetching Instagram posts insights of user using Facebook Graph API. The code is written using python language. Flask framework is used for publishing data in web for visualization purpose. For frontend, basic html and CSS is used.
 
 ## Process to generate "Access Token" for having access to Facebook Graph API:
 
