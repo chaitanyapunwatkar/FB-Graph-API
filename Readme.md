@@ -1,5 +1,4 @@
-# Facebook Graph API 
-###### Instagram's Post Insights
+# Facebook Graph API - Instagram's Post Insights
 
 ## Description
 
