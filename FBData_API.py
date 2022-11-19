@@ -7,13 +7,11 @@ import pandas as pd
 def extract_data():
     # Define Parameters Dictionary
     params = dict()
-    params['access_token'] = 'EAAGZC9aZBFCyYBAFErZCROtKS3qmVC1fCCxZAXDKrSSrhmFmBRFgzrxTASu9F7QKZAswvElb3TrZAc2exkaUiC3goXI2x6IMOLiEFglygTrK4eZAOlhEbZCxfC6CkXyZAHImZB1EI3j49DC3017IO6URDZBZAHLQNBZCM0f58c7PoxnZAUT8fULvVwKZAES'        # not an actual access token
-    params['client_id'] = '492536909335334'                  # App ID
-    params['client_secret'] = 'ae25c5b07e84fbda0dbd713d23309b73'     # App secret code
+    # Access Token generated from graph api tools
+    params['access_token'] = 'EAAGZC9aZBFCyYBAIy3jmgZCNRBWeMSsTr1u0hEawmbmTACThONKzqwGJQfLZA7pJImaexZCpZCwQj7PEsNc6vMS4PwsTOGihdDSwYOGWOcwa8ziKjZBZCKdsIwxcdGKjIn9Ya9OOwv5JZCHfofOSk7ZCA0tJ21vFzci0lcCmTJRmxdmZBvZA4FiEy7mI'       
     params['graph_domain'] = 'https://graph.facebook.com' 
     params['graph_version'] = 'v15.0'
     params['endpoint_base'] = params['graph_domain'] + '/' + params['graph_version'] + '/'
-    params['page_id'] = '107172182218975'                  # FB Page ID
     params['instagram_account_id'] = '17841456289775098'    # instagram business account id
     params['ig_username'] = '_itachiu__'
 
@@ -29,6 +27,7 @@ def extract_data():
     # Requests Data
     data = requests.get(url, endpointParams)
     access_token_data = json.loads(data.content)
+
     #print(access_token_data)
     print("Token Expires: ", datetime.datetime.fromtimestamp(access_token_data['data']['expires_at']))
 
@@ -50,9 +49,9 @@ def extract_data():
     df.columns = ['id', 'Caption', 'Media_URL', 'Permalink', 'Username', 'Likes', 'Comments']
     print(df.head())
 
+    # Loop Over 'Media IDs'
     media_insight = []
 
-    # Loop Over 'Media ID's'
     for i in basic_insight['data']:
         params['latest_media_id'] = i['id']
         
